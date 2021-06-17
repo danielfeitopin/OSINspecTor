@@ -1,0 +1,84 @@
+{% extends "base.html" %} {%block content%}
+
+<div>
+  <p><h1>Descripción de la aplicación</h1></p>
+  <p class="indexp"> 
+    OSINTspecTor es una aplicación web en la que juntamos muchas herramientas 
+    útiles para trabajos de <i>information gathering</i> como geolocalización, 
+    búsqueda de subdominios o resolución inversa entre otras. Hoy en día para 
+    poder descubrir información sobre dominios o IPs tenemos que combinar y 
+    recopilar información de diferentes fuentes pero con OSINTspecTor te 
+    mostramos una solución fácil y compacta para poder tener toda la 
+    información en un solo lugar. Nosotros ofrecemos dos opciones de 
+    búsqueda o bien por dominio o por IP.
+  </p>
+</div>
+
+<div>
+  <p><h2>Descripción de la búsqueda por dominio</h2></p>
+  <p class="indexp"> 
+    En esta parte de la web se pueden realizar recopilación de información 
+    simplemente introduciendo en la barra de búsqueda el dominio del cuál 
+    queramos saber sus datos. A continuación realizaremos una de las 
+    peticiones disponibles pulsando el botón, entre ellas se encuentra la 
+    geolocalización, busqueda de subdominios, descubrimiento de servidores 
+    DNS, obtención de servidores de correo, busquedas de direcciones de 
+    correo, rangos de IPs y vulnerabilidades.
+  </p>
+</div>
+
+<div>
+  <p><h2>Descripción de la búsqueda por IP</h2></p>
+  <p class="indexp"> 
+    También ofrecemos obtención de información a traves de IPs, de la misma 
+    forma que en la búsqueda por dominio introducimos la IP de la entidad de 
+    la que queramos información y decidimos que es lo que deseamos obtener. 
+    Esta aplicación ofrece geolocalización, resolución inversa, y muestra de 
+    vulnerabilidades.
+  </p>
+</div>
+
+<br>
+<div class="container text-dark formy">
+	{{loginError}}
+	<BR>
+	<!-- Trigger the modal with a button -->
+	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<div role="tabpanel">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a class="tabs" href="#loginTab" aria-controls="loginTab" role="tab" data-toggle="tab">Login</a>
+
+							</li>
+							<li role="presentation"><a class="tabs" href="#signupTab" aria-controls="signupTab" role="tab" data-toggle="tab">Registrarse</a>
+
+							</li>
+						</ul>
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="loginTab">
+								<p>{% load crispy_forms_tags %} {% crispy login_form login_form.helper %}
+								</p>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="signupTab">
+								<p>{% load crispy_forms_tags %} {% crispy signup_form signup_form.helper %}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

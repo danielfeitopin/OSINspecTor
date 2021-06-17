@@ -1,0 +1,112 @@
+:root {
+    --color1: #121a36;  /* Background */
+    --color2: #ffffff;/* Text */
+    --color3: #e3f2fd;/* Nav bar */
+    --color4: #0900C3; /* Bars */
+}
+
+body {
+    /* Background */
+    background-color: var(--color1);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    
+    /* Text */
+    font-size: 1em;
+    font-family: "Archivo Narrow", sans-serif;
+    text-align: center;
+    color: var(--color2);
+
+    /* margins */
+    padding-top: 9vh;
+}
+
+p.indexp {
+    text-align: justify;
+}
+
+footer {
+    font-family: "Archivo Narrow", sans-serif;
+    font-size: calc(0.25em + 1vmin);
+}
+
+button {
+    border-radius: 20px;
+    background-color: green;
+    color: white;
+    padding: 50px;
+}
+
+#results {
+    width: fit-content;
+}
+
+#spinner-div{
+    visibility: hidden;
+}
+
+.spinner-border{
+    color: var(--color3);
+}
+
+.my-custom-scrollbar {
+    position:  relative;
+    height: 50vh;
+    /* width: 40vw; */
+    overflow: auto;
+}
+
+.my-badge {
+    font-size: 1.3em;
+    margin: 0.5vw;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+img#mat-img{
+    width: auto;
+    height: 40vh;
+}
+
+.hideme{
+    display:none;
+}
+
+/* Links */
+a:link {
+    color: var(--color2);
+}
+div a.tabs {
+    color: var(--color1);
+    margin: 0.2vw;
+}
+table a.cve{
+    color: var(--color1);
+}
+
+a:visited {
+    color: var(--color2);
+}
+
+a:hover {
+    color: var(--color3);
+}
+
+a:active {
+    color: var(--color4);
+}
+
+#nav-custom {
+    background-color: var(--color3);
+}
+
+@media (min-width: 992px){
+    .navbar li {
+        margin-left : 1em;
+        margin-right : 1em;
+    }
+}

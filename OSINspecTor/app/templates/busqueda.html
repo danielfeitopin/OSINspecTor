@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% load static %} {%block content%}
+
+<div>
+  <p><h1>{{ cabecera }}</h1></p>
+</div>
+
+<div>
+  <form id="form-search" autocomplete="off" onsubmit="return false">
+    <label for="form_input">{{ form_label }}</label>
+    <input id="form_input" class="focusable form-element mx-sm-1" type="text"/>
+  </form>
+</div>
+
+{% for id,label in buttons %}
+    <button id="{{ id }}" class="btn btn-outline-light mx-sm-1 my-sm-2" type="button"><i class="material-icons right">{{ label }}</i></button>
+{% endfor %}
+
+<br>
+<br>
+
+<div class="d-flex justify-content-center" id="spinner-div">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div id="results" class="container"></div>
+
+<script src="{% static "js/ajax.js" %}"></script>
+
+<br>
+
+{% endblock %}
